@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    color: purple;
+    background-image: url('../image/MoonBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    text-align: left;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tracker-container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 12px;
+    max-width: 450px; /* smaller width */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 4px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.center-button {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2d6cdf;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1c4bb8;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+}
+.graph-container {
+    background-color: rgba(0, 0, 0, 0.65);  /* Darken just the graph box */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}

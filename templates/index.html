@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container py-4">
+    <h1 class="text-center mb-4">🌙 Moon Phase Tracker</h1>
+
+    <div class="row justify-content-center">
+        <!-- Form Column -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="location" class="form-label">📍 Location:</label>
+                            <input type="text" name="location" class="form-control" placeholder="Enter location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">📅 Date:</label>
+                            <input type="date" name="date" class="form-control" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Get Moon Phase</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Column -->
+        {% if phase %}
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-3">🌕 Moon Phase Info for {{ date }}</h4>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item"><strong>Location:</strong> {{ location }}</li>
+                        <li class="list-group-item"><strong>Phase:</strong> {{ phase }}</li>
+                        <li class="list-group-item"><strong>Illumination:</strong> {{ illumination }}%</li>
+                        <li class="list-group-item"><strong>Moonrise:</strong> {{ moonrise }}</li>
+                        <li class="list-group-item"><strong>Moonset:</strong> {{ moonset }}</li>
+                    </ul>
+                    <div class="text-center mb-3">
+                        <img src="{{ moon_image }}" alt="Moon Image" class="img-fluid" style="max-height: 200px;">
+                    </div>
+                    <p class="text-center">
+                        <a href="https://science.nasa.gov/moon/moon-phases/" target="_blank" class="btn btn-outline-secondary btn-sm">Learn More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="https://science.nasa.gov/moon/facts/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-info position-fixed bottom-0 start-0 m-3 z-3">
+        More About Our Moon
+</a>
+    </div>
+</div>
+{% endblock %}

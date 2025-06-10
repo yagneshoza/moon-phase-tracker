@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>📈 Moon Illumination Over 30 Days</h1>
+
+    <div class="graph-container" style="max-width: 700px; margin: 0 auto;">
+        <canvas id="moonChart"></canvas>
+    </div>
+    <div class="graph-container">
+        <canvas id="moonGraph"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('moonChart').getContext('2d');
+        const moonChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ dates|tojson }},
+                datasets: [{
+                    label: 'Moon Illumination (%)',
+                    data: {{ phases|tojson }},
+                    backgroundColor: 'rgba(173,216,230,0.2)',
+                    borderColor: 'navy',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+    </script>
+{% endblock %}
