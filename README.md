@@ -4,7 +4,7 @@ A simple Flask web app that lets users track the moon's current phase, illuminat
 
 ## 🚀 Live Demo
 
-[Click here to view the live site]((https://moon-phase-tracker-zknc.onrender.com/))
+[Click here to view the live site](https://moon-phase-tracker-zknc.onrender.com/)
 
 ## 🚀 Features
 
